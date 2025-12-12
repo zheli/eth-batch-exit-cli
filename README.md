@@ -30,9 +30,9 @@ Run the script using `poetry run` with the path to your YAML file containing the
 poetry run python exit_validators.py --file validators.yaml
 ```
 
-### Mode 2: Using a text file with private keys
+### Mode 2: Using a YAML file with private keys
 
-Run the script using `poetry run` with the path to your text file containing private keys:
+Run the script using `poetry run` with the path to your YAML file containing private keys:
 
 ```bash
 poetry run python exit_validators.py --priv-keys-file private_keys.txt
@@ -43,7 +43,7 @@ poetry run python exit_validators.py --priv-keys-file private_keys.txt
 ### Options
 
 *   `--file`: Path to the YAML file with validator keys. Required if `--priv-keys-file` is not specified.
-*   `--priv-keys-file`: Path to the text file containing private keys (multiple YAML documents). Required if `--file` is not specified. When using this mode:
+*   `--priv-keys-file`: Path to the YAML file containing private keys (multiple documents). Required if `--file` is not specified. When using this mode:
     *   The `--env-file` and `--operator` flags are ignored
     *   The `--resume-from` flag is not supported (use `--start-index` instead)
     *   Status checking is skipped after exit commands
@@ -88,7 +88,7 @@ operators:
 
 ## Private Keys File Format
 
-The private keys text file should contain multiple YAML documents, each with a `privateKey` field:
+The private keys file should be a YAML file containing multiple documents, each with a `privateKey` field:
 
 ```
 ---
