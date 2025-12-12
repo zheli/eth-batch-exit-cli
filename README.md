@@ -90,7 +90,7 @@ operators:
 
 The private keys file should be a YAML file containing multiple documents, each with a `privateKey` field:
 
-```
+```yaml
 ---
 privateKey: 0x1234567890abcdef...
 ---
