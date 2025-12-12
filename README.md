@@ -43,7 +43,7 @@ poetry run python exit_validators.py --priv-keys-file private_keys.txt
 ### Options
 
 *   `--file`: Path to the YAML file with validator keys. Required if `--priv-keys-file` is not specified.
-*   `--priv-keys-file`: Path to the text file containing private keys (YAML stream format). Required if `--file` is not specified. When using this mode:
+*   `--priv-keys-file`: Path to the text file containing private keys (multiple YAML documents). Required if `--file` is not specified. When using this mode:
     *   The `--env-file` and `--operator` flags are ignored
     *   The `--resume-from` flag is not supported (use `--start-index` instead)
     *   Status checking is skipped after exit commands
@@ -88,7 +88,7 @@ operators:
 
 ## Private Keys File Format
 
-The private keys text file should follow this structure (YAML stream format):
+The private keys text file should contain multiple YAML documents, each with a `privateKey` field:
 
 ```
 ---
@@ -97,4 +97,4 @@ privateKey: 0x1234567890abcdef...
 privateKey: 0xfedcba0987654321...
 ```
 
-Each validator entry has its private key on a line starting with `privateKey:`. The private key can be provided with or without quotes.
+Each validator is represented as a separate YAML document (separated by `---`), with the private key specified in the `privateKey` field. The private key can be provided with or without quotes.
