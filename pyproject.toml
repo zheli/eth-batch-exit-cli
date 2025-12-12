@@ -1,0 +1,19 @@
+[project]
+name = "validator-exit-tool"
+version = "0.1.0"
+description = "Tool to batch exit Ethereum validators"
+authors = [
+    {name = "Antigravity"}
+]
+readme = "README.md"
+requires-python = "^3.9"
+dependencies = [
+    "pyyaml (>=6.0.3,<7.0.0)",
+    "requests (>=2.32.5,<3.0.0)",
+    "py-ecc (>=8.0.0,<9.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
