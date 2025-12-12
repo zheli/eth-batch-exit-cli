@@ -86,6 +86,8 @@ def load_private_keys(txt_file):
                 key_value = key_value.strip('"').strip("'")
                 if key_value:
                     keys.append(key_value)
+            elif line.startswith('0x'):
+                 keys.append(line)
     except Exception as e:
         print(f"Error reading Private Key file: {e}")
         sys.exit(1)

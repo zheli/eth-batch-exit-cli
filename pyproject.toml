@@ -13,6 +13,10 @@ dependencies = [
     "py-ecc (>=8.0.0,<9.0.0)"
 ]
 
+[tool.poetry]
+packages = [
+    { include = "exit_validators.py" }
+]
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
